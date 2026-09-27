@@ -1,0 +1,4 @@
+kind,reps,gm_p_nonempty,gm_nsel_median,gm_nsel_max,ko_p_nonempty,ko_nsel_median,ko_nsel_max,ko_frac_converged,gm_power,ko_power,gm_fdp,ko_fdp
+ctrl,200,1.0,5.0,10,1.0,13.0,24,1.0,0.42083333333333334,0.9770833333333333,0.0,0.1096877791970671
+null,200,0.08,0.0,5,0.055,0.0,8,0.87,,,,
+real,200,0.83,1.0,10,0.355,0.0,28,1.0,,,,

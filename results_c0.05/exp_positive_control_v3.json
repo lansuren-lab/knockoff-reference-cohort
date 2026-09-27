@@ -1,0 +1,32 @@
+{
+  "name": "exp_positive_control_v3",
+  "args": {
+    "reps": 200,
+    "data": "feat2_abide1_aal",
+    "outdir": "results_c0.05",
+    "seed": 0,
+    "workers": 14,
+    "supports": "fixed_highVIF,random3,random12",
+    "conds": "1.0,2.0,3.0,4.0,6.0",
+    "c": 0.05
+  },
+  "constants": {
+    "TOL": 1e-08,
+    "MAX_ITER": 100000,
+    "C_FIXED": 0.15,
+    "C_STABILITY": 0.05,
+    "Q_DEFAULT": 0.2,
+    "MAX_ROI_MISS": 20
+  },
+  "versions": {
+    "python": "3.13.9",
+    "numpy": "2.3.5",
+    "sklearn": "1.7.2",
+    "scipy": "1.16.3",
+    "platform": "Windows-2019Server-10.0.17763-SP0"
+  },
+  "timestamp": "2026-09-23T17:29:28",
+  "inputs": {
+    "feat2_abide1_aal/X_meanconn.csv": "bb4bed1f94d7fb36"
+  }
+}
