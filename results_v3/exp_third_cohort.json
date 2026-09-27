@@ -1,0 +1,21 @@
+{
+  "name": "exp_third_cohort",
+  "args": {},
+  "constants": {
+    "TOL": 1e-08,
+    "MAX_ITER": 100000,
+    "C_FIXED": 0.15,
+    "C_STABILITY": 0.05,
+    "Q_DEFAULT": 0.2,
+    "MAX_ROI_MISS": 20
+  },
+  "versions": {
+    "python": "3.13.9",
+    "numpy": "2.3.5",
+    "sklearn": "1.7.2",
+    "scipy": "1.16.3",
+    "platform": "Windows-2019Server-10.0.17763-SP0"
+  },
+  "timestamp": "2026-09-24T19:52:34",
+  "inputs": {}
+}

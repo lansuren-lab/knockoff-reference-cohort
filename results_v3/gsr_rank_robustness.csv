@@ -1,0 +1,3 @@
+dataset,p,n,splits,meanconn_effrank_mean,meanconn_effrank_sd,gsr_effrank_mean,gsr_effrank_sd,direction,T_min,T_median,T_max,n_subjects_T_le_p
+feat2_abide1_aal,113,852,5,2.4921322915064565,0.07565036168578283,9.082096577184803,0.46809099564879186,raises,78,176.0,296,23
+feat2_abide2,94,956,5,17.198492270339578,1.1808047921916132,11.180337776942116,0.5229791243688016,lowers,119,180.0,1894,0

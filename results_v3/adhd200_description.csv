@@ -1,0 +1,21 @@
+quantity,value,source
+n_before_qc,768,qc_report.txt (external cleaning step)
+n_dropped_qc_failed,93,qc_report.txt
+n_dropped_unevaluated,11,qc_report.txt (all three Peking sites)
+n_subjects,664,manifest
+n_controls,427,"manifest (y=0, dx_group=0)"
+n_adhd,237,"manifest (y=1, dx_group 1/2/3)"
+p_roi,116,AAL116
+n_sites,9,manifest
+n_main,543,"manifest, 6 largest sites"
+n_ref,121,manifest
+n_ref_over_p,1.04,derived
+age_min,7.09,manifest
+age_max,21.83,manifest
+n_tr_min,72.0,manifest
+n_tr_max,257.0,manifest
+n_bad_channel_subjects,0,manifest
+n_with_motion_record,78,manifest (KKI only)
+motion_min_mm,0.264,manifest
+motion_median_mm,1.092,manifest
+motion_max_mm,3.911,manifest

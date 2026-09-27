@@ -1,0 +1,32 @@
+{
+  "name": "exp_multienv_positive_control",
+  "args": {
+    "reps": 60,
+    "q": 0.2,
+    "c": 0.15,
+    "min_n": 40,
+    "target_cond_t": 6.0,
+    "env_mode": "split",
+    "n_env": 4,
+    "outcsv": "_pc_split_c015.csv",
+    "outdir": "results_multienv",
+    "seed": 0
+  },
+  "constants": {
+    "TOL": 1e-08,
+    "MAX_ITER": 100000,
+    "C_FIXED": 0.15,
+    "C_STABILITY": 0.05,
+    "Q_DEFAULT": 0.2,
+    "MAX_ROI_MISS": 20
+  },
+  "versions": {
+    "python": "3.13.9",
+    "numpy": "2.3.5",
+    "sklearn": "1.7.2",
+    "scipy": "1.16.3",
+    "platform": "Windows-2019Server-10.0.17763-SP0"
+  },
+  "timestamp": "2026-09-27T02:17:04",
+  "inputs": {}
+}

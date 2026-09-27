@@ -1,0 +1,176 @@
+id,location,artifact,column,selector,expected,tol
+D01,谱诊断 AAL116 CPAC meanconn lambda_min,results/diagnostics.csv,lam_min_emp,dataset=ABIDE1-AAL116-CPAC;feature=meanconn,0.02181,0.0005
+D02,谱诊断 AAL116 CPAC meanconn 有效秩,results/diagnostics.csv,eff_rank,dataset=ABIDE1-AAL116-CPAC;feature=meanconn,2.56,0.02
+D03,谱诊断 AAL116 CPAC 偏相关有效秩,results/diagnostics.csv,eff_rank,dataset=ABIDE1-AAL116-CPAC;feature=partial,71.63,0.5
+D04,谱诊断 CC200 meanconn 有效秩,results/diagnostics.csv,eff_rank,dataset=ABIDE1-CC200-CPAC;feature=meanconn,2.38,0.02
+D05,谱诊断 CC200 偏相关有效秩,results/diagnostics.csv,eff_rank,dataset=ABIDE1-CC200-CPAC;feature=partial,105.16,0.5
+D06,谱诊断 HO meanconn 有效秩,results/diagnostics.csv,eff_rank,dataset=ABIDE1-HO-CPAC;feature=meanconn,2.23,0.02
+D07,谱诊断 NIAK meanconn 有效秩,results/diagnostics.csv,eff_rank,dataset=ABIDE1-AAL116-NIAK;feature=meanconn,3.23,0.02
+D08,谱诊断 NIAK GSR 有效秩（GSR 在此无效）,results/diagnostics.csv,eff_rank,dataset=ABIDE1-AAL116-NIAK;feature=gsr,3.31,0.02
+D09,谱诊断 ABIDE2 meanconn 有效秩,results/diagnostics.csv,eff_rank,dataset=ABIDE2-Power2011;feature=meanconn,15.95,0.05
+D10,谱诊断 ABIDE2 GSR 有效秩（GSR 在此更差）,results/diagnostics.csv,eff_rank,dataset=ABIDE2-Power2011;feature=gsr,9.67,0.05
+D11,谱诊断 ABIDE2 lambda_min,results/diagnostics.csv,lam_min_emp,dataset=ABIDE2-Power2011;feature=meanconn,0.03438,0.0005
+D12,谱诊断 AAL116 NIAK lambda_min,results/diagnostics.csv,lam_min_emp,dataset=ABIDE1-AAL116-NIAK;feature=meanconn,0.01829,0.0005
+B01,E2 族A t=0 功效（ABIDE 退化结构）,results_c0.05/boundary_sweep.csv,power,family=A_blend_to_I;param=0.0,0.859,0.04
+B02,E2 族A t=0 FDP,results_c0.05/boundary_sweep.csv,fdp,family=A_blend_to_I;param=0.0,0.154,0.03
+B03,E2 族A t=1 功效,results_c0.05/boundary_sweep.csv,power,family=A_blend_to_I;param=1.0,1.000,0.02
+B04,E2 族C AAL116 meanconn 功效（真实特征）,results_c0.05/boundary_sweep.csv,power,dataset=ABIDE1-AAL116-CPAC;feature=meanconn,0.859,0.04
+B05,E2 族C AAL116 partial 功效,results_c0.05/boundary_sweep.csv,power,dataset=ABIDE1-AAL116-CPAC;feature=partial,1.000,0.02
+B06,E2 族C CC200 meanconn 功效,results_c0.05/boundary_sweep.csv,power,dataset=ABIDE1-CC200-CPAC;feature=meanconn,0.844,0.04
+S01,E4 delta=0 功效,results_c0.05/cohort_shift.csv,power,delta=0.0,0.859,0.04
+S02,E4 delta=0.10（≈真实不匹配）FDP,results_c0.05/cohort_shift.csv,fdp,delta=0.1,0.144,0.03
+S03,E4 delta=0.30 FDP（越过 q）,results_c0.05/cohort_shift.csv,fdp,delta=0.3,0.227,0.04
+S04,E4 delta=0.80 FDP,results_c0.05/cohort_shift.csv,fdp,delta=0.8,0.422,0.05
+P01,E3 random12 cond|t|=6 ref_100 功效,results_c0.05/positive_control_v3.csv,pow_ref_100,support=random12;target_cond_t=6.0,0.93,0.05
+P02,E3 random12 cond|t|=6 ref_all 功效,results_c0.05/positive_control_v3.csv,pow_ref_all,support=random12;target_cond_t=6.0,0.98,0.04
+P03,E3 random12 cond|t|=6 in_sample 功效,results_c0.05/positive_control_v3.csv,pow_in_sample,support=random12;target_cond_t=6.0,0.98,0.04
+P04,E3 random12 cond|t|=6 main_corr 功效,results_c0.05/positive_control_v3.csv,pow_main_corr,support=random12;target_cond_t=6.0,0.97,0.04
+P05,E3 random12 cond|t|=2 ref_all 功效,results_c0.05/positive_control_v3.csv,pow_ref_all,support=random12;target_cond_t=2.0,0.29,0.06
+P06,E3 random3 cond|t|=6 ref_all 功效（k 小则功效低）,results_c0.05/positive_control_v3.csv,pow_ref_all,support=random3;target_cond_t=6.0,0.21,0.06
+P07,E3 fixed_highVIF cond|t|=6 ref_all 功效,results_c0.05/positive_control_v3.csv,pow_ref_all,support=fixed_highVIF;target_cond_t=6.0,0.28,0.07
+P08,E3 fixed_highVIF 边际|t|（VIF 膨胀）,results_c0.05/positive_control_v3.csv,achieved_marg_t,support=fixed_highVIF;target_cond_t=6.0,48.9,1.0
+V01,收缩预算 alpha=0.20 真实FDP,results/shrinkage_fdr_results.csv,fdp_mean,level=sh0.20,0.1971,0.005
+V02,收缩预算 alpha=0 真实FDP,results/shrinkage_fdr_results.csv,fdp_mean,level=empirical,0.0790,0.005
+V03,收缩预算 alpha=0.20 功效,results/shrinkage_fdr_results.csv,power,level=sh0.20,0.633,0.01
+V04,配对检验 alpha=0.20 gap,results/shrinkage_paired_results.csv,gap,level=sh0.20,0.0399,0.005
+V05,配对检验 alpha=0.20 配对t,results/shrinkage_paired_results.csv,t,level=sh0.20,4.77,0.3
+V06,配对检验 alpha=0 gap（应为 0）,results/shrinkage_paired_results.csv,gap,level=empirical,-0.0003,0.005
+G01,PC1 占比 AAL116 meanconn,results_c0.05/pc1_dominance.csv,pc1_share,dataset=ABIDE1-AAL116-CPAC;feature=meanconn,0.621,0.005
+G02,特征在 PC1 上的中位 R2（meanconn）,results_c0.05/pc1_dominance.csv,r2_on_pc1_median,dataset=ABIDE1-AAL116-CPAC;feature=meanconn,0.677,0.005
+G03,特征在 PC1 上的中位 R2（partial）,results_c0.05/pc1_dominance.csv,r2_on_pc1_median,dataset=ABIDE1-AAL116-CPAC;feature=partial,0.018,0.005
+G04,PC1 占比 AAL116 partial,results_c0.05/pc1_dominance.csv,pc1_share,dataset=ABIDE1-AAL116-CPAC;feature=partial,0.043,0.005
+G05,PC1 占比 AAL116 gsr,results_c0.05/pc1_dominance.csv,pc1_share,dataset=ABIDE1-AAL116-CPAC;feature=gsr,0.299,0.005
+G06,R2 on PC1 AAL116 gsr,results_c0.05/pc1_dominance.csv,r2_on_pc1_median,dataset=ABIDE1-AAL116-CPAC;feature=gsr,0.288,0.005
+G07,R2 on PC1 AAL116 pcresid,results_c0.05/pc1_dominance.csv,r2_on_pc1_median,dataset=ABIDE1-AAL116-CPAC;feature=pcresid,0.067,0.005
+P09,罚参数 c=0.15 平均找回（/12）,results_c0.05/penalty_sweep.csv,mean_recovered,c=0.15,1.12,0.15
+P10,罚参数 c=0.05 平均找回（/12）,results_c0.05/penalty_sweep.csv,mean_recovered,c=0.05,11.73,0.15
+P11,罚参数 c=0.10 平均找回（/12）,results_c0.05/penalty_sweep.csv,mean_recovered,c=0.1,6.95,0.15
+P12,罚参数 c=0.03 平均找回（/12）,results_c0.05/penalty_sweep.csv,mean_recovered,c=0.03,11.97,0.15
+P13,真实响应 c=0.03 未收敛（经验 Sigma）,results_c0.05/penalty_convergence_real.csv,frac_nonconverged,c=0.03;Sigma=empirical,0.467,0.06
+P14,真实响应 c=0.05 未收敛,results_c0.05/penalty_convergence_real.csv,frac_nonconverged,c=0.05;Sigma=empirical,0.0,0.02
+P15,真实响应 c=0.02 未收敛,results_c0.05/penalty_convergence_real.csv,frac_nonconverged,c=0.02;Sigma=empirical,0.983,0.03
+P16,真实响应 c=0.03 未收敛（LW）,results_c0.05/penalty_convergence_real.csv,frac_nonconverged,c=0.03;Sigma=LW,0.133,0.06
+P17,真实响应 c=0.03 未收敛（样本内）,results_c0.05/penalty_convergence_real.csv,frac_nonconverged,c=0.03;Sigma=in_sample,0.183,0.06
+E01,抽样分布 AAL116 meanconn P(非空),results_c0.05/draw_distribution.csv,p_nonempty,dataset=ABIDE1-AAL116-CPAC;feature=meanconn,0.355,0.06
+E02,抽样分布 HO meanconn P(非空),results_c0.05/draw_distribution.csv,p_nonempty,dataset=ABIDE1-HO-CPAC;feature=meanconn,0.420,0.07
+E03,抽样分布 ABIDE2 pcresid P(非空),results_c0.05/draw_distribution.csv,p_nonempty,dataset=ABIDE2-Power2011;feature=pcresid,0.815,0.06
+E04,抽样分布 ABIDE2 pcresid 阈值比中位,results_c0.05/draw_distribution.csv,ratio_median,dataset=ABIDE2-Power2011;feature=pcresid,0.148,0.03
+E05,抽样分布 ABIDE2 pcresid |S|中位,results_c0.05/draw_distribution.csv,nsel_median,dataset=ABIDE2-Power2011;feature=pcresid,12,1.0
+E06,抽样分布 AAL116 meanconn |S|最大,results_c0.05/draw_distribution.csv,nsel_max,dataset=ABIDE1-AAL116-CPAC;feature=meanconn,28,1.0
+E07,抽样分布 NIAK gsr P(非空),results_c0.05/draw_distribution.csv,p_nonempty,dataset=ABIDE1-AAL116-NIAK;feature=gsr,0.0,0.01
+E08,抽样分布 CC200 meanconn 收敛率（不可用行）,results_c0.05/draw_distribution.csv,frac_converged,dataset=ABIDE1-CC200-CPAC;feature=meanconn,0.37,0.05
+B07,E2 族C 最低功效（NIAK+GSR）,results_c0.05/boundary_sweep.csv,power,dataset=ABIDE1-AAL116-NIAK;feature=gsr,0.770,0.05
+B08,E2 族C NIAK meanconn 功效,results_c0.05/boundary_sweep.csv,power,dataset=ABIDE1-AAL116-NIAK;feature=meanconn,0.922,0.05
+P18,E3 random12 c|t|=3 ref_100 功效,results_c0.05/positive_control_v3.csv,pow_ref_100,support=random12;target_cond_t=3.0,0.59,0.06
+P19,E3 random12 c|t|=3 ref_all 功效,results_c0.05/positive_control_v3.csv,pow_ref_all,support=random12;target_cond_t=3.0,0.68,0.06
+A01,特征一致性 meanconn vs GSR 中位 r,results/feature_agreement.csv,median_r,dataset=ABIDE1-AAL116-CPAC;a=gsr;b=meanconn,0.219,0.01
+A02,特征一致性 meanconn vs partial 中位 r,results/feature_agreement.csv,median_r,dataset=ABIDE1-AAL116-CPAC;a=meanconn;b=partial,0.210,0.01
+V07,配对检验 alpha=0.10 gap,results/shrinkage_paired_results.csv,gap,level=sh0.10,0.0240,0.005
+V08,配对检验 alpha=0.10 增量p,results/shrinkage_paired_results.csv,p_vs_alpha0,level=sh0.10,0.00908,0.004
+V09,收缩预算 alpha=0.15 真实FDP,results/shrinkage_fdr_results.csv,fdp_mean,level=sh0.15,0.1865,0.005
+V10,收缩预算 LW 真实FDP,results/shrinkage_fdr_results.csv,fdp_mean,level=LW,0.1105,0.005
+V11,收缩预算 alpha=0 功效,results/shrinkage_fdr_results.csv,power,level=empirical,0.265,0.01
+C01,构造对照 AAL116 meanconn 等相关 s,results_construct/construction_s.csv,s_median,dataset=ABIDE1-AAL116-CPAC;feature=meanconn;method=equicorrelated,0.0641,0.002
+C02,构造对照 AAL116 meanconn SDP s,results_construct/construction_s.csv,s_median,dataset=ABIDE1-AAL116-CPAC;feature=meanconn;method=sdp,0.0883,0.003
+C03,构造对照 AAL116 meanconn ASDP s,results_construct/construction_s.csv,s_median,dataset=ABIDE1-AAL116-CPAC;feature=meanconn;method=asdp,0.0630,0.002
+C04,构造对照 AAL116 meanconn MVR s,results_construct/construction_s.csv,s_median,dataset=ABIDE1-AAL116-CPAC;feature=meanconn;method=mvr,0.0685,0.002
+C05,构造对照 AAL116 meanconn ME s,results_construct/construction_s.csv,s_median,dataset=ABIDE1-AAL116-CPAC;feature=meanconn;method=me,0.0808,0.003
+C06,构造对照 ABIDE2 partial SDP s（4.6 倍）,results_construct/construction_s.csv,s_median,dataset=ABIDE2-Power2011;feature=partial;method=sdp,0.6110,0.02
+C07,构造对照 ABIDE2 partial 等相关 s,results_construct/construction_s.csv,s_median,dataset=ABIDE2-Power2011;feature=partial;method=equicorrelated,0.1330,0.005
+G08,GM 正对照 power,results_gm/gm_vs_knockoff.csv,gm_power,kind=ctrl,0.421,0.05
+G09,GM 正对照 FDP,results_gm/gm_vs_knockoff.csv,gm_fdp,kind=ctrl,0.000,0.01
+G10,knockoff 正对照 power（对照）,results_gm/gm_vs_knockoff.csv,ko_power,kind=ctrl,0.977,0.03
+G11,GM 全局零假设 P(非空),results_gm/gm_vs_knockoff.csv,gm_p_nonempty,kind=null,0.080,0.03
+G12,GM 真实响应 P(非空),results_gm/gm_vs_knockoff.csv,gm_p_nonempty,kind=real,0.830,0.05
+M01,GM 机制 ||x_j|| 中位,results_v3/gm_mechanism.csv,norm_x,roi=Precentral_L,21.39,0.5
+M02,偏相关有效秩 未收缩,results_v3/partial_rank_robustness.csv,effective_rank,shrinkage=0.0;estimator=fixed,59.75,0.5
+M03,偏相关有效秩 最强收缩 0.5,results_v3/partial_rank_robustness.csv,effective_rank,shrinkage=0.5;estimator=fixed,53.41,0.5
+M04,偏相关有效秩 Ledoit-Wolf,results_v3/partial_rank_robustness.csv,effective_rank,estimator=LedoitWolf,60.56,0.5
+M05,GSR ABIDE I 方向,results_v3/gsr_rank_robustness.csv,gsr_effrank_mean,dataset=feat2_abide1_aal,9.08,0.5
+M06,GSR ABIDE II 方向（降低）,results_v3/gsr_rank_robustness.csv,gsr_effrank_mean,dataset=feat2_abide2,11.18,0.5
+M07,ABIDE II T<=p 的受试者数（0 排除秩上限解释）,results_v3/gsr_rank_robustness.csv,n_subjects_T_le_p,dataset=feat2_abide2,0,0.5
+M08,跨管线 per-ROI 中位 r,results_v3/pipeline_agreement.csv,median_per_roi_corr,*,0.4361,0.005
+M09,跨管线 t 统计量 r,results_v3/pipeline_agreement.csv,t_stat_r,*,0.5901,0.005
+M10,跨管线 <0.5 的 ROI 数,results_v3/pipeline_agreement.csv,n_below_0.5,*,90,0.5
+K01,矩阵幂 t=1 正对照 power,results_matrixpow_step02/matrixpow_control.csv,power,t=1.0,0.892,0.03
+K02,矩阵幂 t=1 正对照 FDP,results_matrixpow_step02/matrixpow_control.csv,fdp,t=1.0,0.130,0.03
+K03,矩阵幂 t=0 正对照 FDP,results_matrixpow_step02/matrixpow_control.csv,fdp,t=0.0,0.826,0.04
+K04,矩阵幂 t=-0.6 全局零假设 P(非空),results_matrixpow_step02/matrixpow_globalnull.csv,p_nonempty,t=-0.6,0.280,0.05
+K05,矩阵幂 t=1 全局零假设 P(非空)（合规）,results_matrixpow_step02/matrixpow_globalnull.csv,p_nonempty,t=1.0,0.055,0.03
+K06,矩阵幂 t=-0.6 真实响应 报告比值,results_matrixpow_step02/matrixpow_real.csv,ratio_median,t=-0.6,0.091,0.02
+K07,矩阵幂 t=1 有效秩,results_matrixpow_step02/matrixpow_control.csv,eff_rank,t=1.0,2.56,0.05
+K08,矩阵幂 t=0 有效秩,results_matrixpow_step02/matrixpow_control.csv,eff_rank,t=0.0,111.09,0.5
+N01,多环境 r=2 选中数,results_multienv/multienv.csv,n_selected,r=2;selected=;,0,0.5
+N02,多环境 r=5 选中数,results_multienv/multienv.csv,n_selected,r=5;selected=;,0,0.5
+S05,罚参数 c=0.15 找回（含全找回比例）,results_c0.05/penalty_sweep.csv,frac_recovered_12of12,c=0.15,0.02,0.03
+S06,罚参数 c=0.05 未收敛,results_c0.05/penalty_convergence_real.csv,frac_nonconverged,c=0.05;Sigma=empirical,0.0,0.02
+D13,特征 R2 on PC1 最大,results_c0.05/pc1_dominance.csv,r2_on_pc1_max,dataset=ABIDE1-AAL116-CPAC;feature=meanconn,0.856,0.01
+H01,ABIDE I 运动QC后人数,results_v3/cohort_description.csv,value,quantity=abide1_n_raw_after_motion_qc,885,0.5
+H02,ABIDE I 最终 n,results_v3/cohort_description.csv,value,quantity=abide1_n_final,852,0.5
+H03,ABIDE I 保留 ROI 数,results_v3/cohort_description.csv,value,quantity=abide1_p_retained,113,0.5
+H04,ABIDE I 主队列 n,results_v3/cohort_description.csv,value,quantity=abide1_main_n,459,0.5
+H05,ABIDE I 参考队列 n,results_v3/cohort_description.csv,value,quantity=abide1_reference_n,393,0.5
+H06,主队列 ASD 数,results_v3/cohort_description.csv,value,quantity=abide1_main_asd,218,0.5
+H07,主队列对照数,results_v3/cohort_description.csv,value,quantity=abide1_main_control,241,0.5
+H08,参考队列 ASD 数,results_v3/cohort_description.csv,value,quantity=abide1_reference_asd,174,0.5
+H09,参考队列对照数,results_v3/cohort_description.csv,value,quantity=abide1_reference_control,219,0.5
+H10,ABIDE I 站点数,results_v3/cohort_description.csv,value,quantity=abide1_n_sites,20,0.5
+H11,最小时间点数,results_v3/cohort_description.csv,value,quantity=abide1_T_min,78,0.5
+H12,最大时间点数,results_v3/cohort_description.csv,value,quantity=abide1_T_max,316,0.5
+H13,时间点中位数,results_v3/cohort_description.csv,value,quantity=abide1_T_median,176,0.5
+H14,含坏通道受试者数,results_v3/cohort_description.csv,value,quantity=abide1_n_subjects_with_bad_channel,68,0.5
+H15,含坏通道比例,results_v3/cohort_description.csv,value,quantity=abide1_pct_subjects_with_bad_channel,7.7,0.1
+H16,CMU 坏通道比例,results_v3/cohort_description.csv,value,quantity=abide1_bad_channel_pct_CMU,80,0.5
+H17,SBL 坏通道比例,results_v3/cohort_description.csv,value,quantity=abide1_bad_channel_pct_SBL,69,0.5
+H18,CALTECH 坏通道比例,results_v3/cohort_description.csv,value,quantity=abide1_bad_channel_pct_CALTECH,46,0.5
+H19,PITT 坏通道比例,results_v3/cohort_description.csv,value,quantity=abide1_bad_channel_pct_PITT,29,0.5
+H20,ABIDE II n,results_v3/cohort_description.csv,value,quantity=abide2_n,956,0.5
+H21,ABIDE II 主队列 n,results_v3/cohort_description.csv,value,quantity=abide2_main_n,564,0.5
+H22,ABIDE II 参考队列 n,results_v3/cohort_description.csv,value,quantity=abide2_reference_n,392,0.5
+H23,ABIDE II p,results_v3/cohort_description.csv,value,quantity=abide2_p,94,0.5
+T01,第三队列 ADHD200 匹配n下的有效秩,results_v3/third_cohort.csv,effrank_mean,cohort=ADHD200-AAL116;n_ref=121,6.65,0.3
+T02,第三队列 ABIDE1 匹配n下的有效秩,results_v3/third_cohort.csv,effrank_mean,cohort=ABIDE1-AAL116;n_ref=121,2.95,0.3
+T03,第三队列 ABIDE2 匹配n下的有效秩,results_v3/third_cohort.csv,effrank_mean,cohort=ABIDE2-Power2011;n_ref=121,13.88,0.3
+T04,ADHD200 不匹配度,results_v3/cohort_mismatch.csv,mismatch,cohort=ADHD200-AAL116,0.2775,0.005
+T05,ADHD200 噪声底,results_v3/cohort_mismatch.csv,noise_floor,cohort=ADHD200-AAL116,0.1603,0.005
+T06,ADHD200 纯超出,results_v3/cohort_mismatch.csv,excess,cohort=ADHD200-AAL116,0.1172,0.005
+T07,ABIDE1 不匹配度,results_v3/cohort_mismatch.csv,mismatch,cohort=ABIDE1-AAL116,0.0593,0.003
+T08,ABIDE1 噪声底,results_v3/cohort_mismatch.csv,noise_floor,cohort=ABIDE1-AAL116,0.0484,0.003
+T09,ABIDE2 不匹配度,results_v3/cohort_mismatch.csv,mismatch,cohort=ABIDE2-Power2011,0.1050,0.003
+T10,ADHD200 正对照 random12 cond|t|=6 ref_all,results_v3/adhd200/positive_control_v3.csv,pow_ref_all,support=random12;target_cond_t=6.0,1.00,0.02
+T11,ADHD200 正对照 random12 cond|t|=6 FDP（越界）,results_v3/adhd200/positive_control_v3.csv,fdp_ref_all,support=random12;target_cond_t=6.0,0.28,0.05
+T12,ADHD200 正对照 random12 cond|t|=6 in_sample FDP（受控）,results_v3/adhd200/positive_control_v3.csv,fdp_in_sample,support=random12;target_cond_t=6.0,0.17,0.05
+T13,ADHD200 正对照 random12 cond|t|=3 ref_all,results_v3/adhd200/positive_control_v3.csv,pow_ref_all,support=random12;target_cond_t=3.0,0.97,0.03
+T14,ADHD200 正对照 random3 cond|t|=6 ref_all,results_v3/adhd200/positive_control_v3.csv,pow_ref_all,support=random3;target_cond_t=6.0,0.24,0.06
+T15,ADHD200 pcresid 有效秩（诊断表）,results/diagnostics.csv,eff_rank,dataset=ADHD200-AAL116;feature=pcresid,25.98,0.5
+T16,ADHD200 partial 有效秩,results/diagnostics.csv,eff_rank,dataset=ADHD200-AAL116;feature=partial,40.20,0.5
+T17,ADHD200 meanconn 有效秩（全量n_ref）,results/diagnostics.csv,eff_rank,dataset=ADHD200-AAL116;feature=meanconn,6.65,0.3
+R01,抽样次数（每配置 draw 数）,results_c0.05/draw_distribution.csv,draws,dataset=ABIDE1-AAL116-CPAC;feature=meanconn,200,0
+R02,meanconn AAL116 单配置最大选中区域数,results_c0.05/draw_distribution.csv,nsel_max,dataset=ABIDE1-AAL116-CPAC;feature=meanconn,28,0
+R03,ABIDE II pcresid 单配置最大选中区域数,results_c0.05/draw_distribution.csv,nsel_max,dataset=ABIDE2-Power2011;feature=pcresid,40,0
+R04,CC200 meanconn 求解器收敛率,results_c0.05/draw_distribution.csv,frac_converged,dataset=ABIDE1-CC200-CPAC;feature=meanconn,0.37,0.01
+R05,ABIDE II pcresid 非空抽签比例,results_c0.05/draw_distribution.csv,p_nonempty,dataset=ABIDE2-Power2011;feature=pcresid,0.82,0.01
+R06,队列漂移 δ=0.10 处的 mismatch（图注引）,results_c0.05/cohort_shift.csv,mismatch,delta=0.1,0.062,0.001
+R07,参照队列 n=100 在|t|=3 k=12 的每信号功效,results_c0.05/positive_control_v3.csv,pow_ref_100,support=random12;target_cond_t=3.0,0.590,0.002
+R08,全量参照队列在|t|=3 k=12 的每信号功效,results_c0.05/positive_control_v3.csv,pow_ref_all,support=random12;target_cond_t=3.0,0.676,0.002
+R09,|t|=6 时 n=100 参照队列每信号功效,results_c0.05/positive_control_v3.csv,pow_ref_100,support=random12;target_cond_t=6.0,0.93,0.005
+R10,|t|=6 时 ref_all 臂每信号功效,results_c0.05/positive_control_v3.csv,pow_ref_all,support=random12;target_cond_t=6.0,0.98,0.005
+A01,ADHD200 QC 前人数,results_v3/adhd200_description.csv,value,quantity=n_before_qc,768,0
+A02,ADHD200 QC 未通过剔除数,results_v3/adhd200_description.csv,value,quantity=n_dropped_qc_failed,93,0
+A03,ADHD200 未评估剔除数,results_v3/adhd200_description.csv,value,quantity=n_dropped_unevaluated,11,0
+A04,ADHD200 最终人数,results_v3/adhd200_description.csv,value,quantity=n_subjects,664,0
+A05,ADHD200 对照数,results_v3/adhd200_description.csv,value,quantity=n_controls,427,0
+A06,ADHD200 ADHD 数,results_v3/adhd200_description.csv,value,quantity=n_adhd,237,0
+A07,ADHD200 主队列人数,results_v3/adhd200_description.csv,value,quantity=n_main,543,0
+A08,ADHD200 参照队列人数,results_v3/adhd200_description.csv,value,quantity=n_ref,121,0
+A09,ADHD200 有头动记录人数,results_v3/adhd200_description.csv,value,quantity=n_with_motion_record,78,0
+A10,ADHD200 头动中位 mm,results_v3/adhd200_description.csv,value,quantity=motion_median_mm,1.09,0.005
+A11,ADHD200 年龄下限,results_v3/adhd200_description.csv,value,quantity=age_min,7.1,0.03
+A12,ADHD200 年龄上限,results_v3/adhd200_description.csv,value,quantity=age_max,21.8,0.04
+A13,ADHD200 头动下限 mm,results_v3/adhd200_description.csv,value,quantity=motion_min_mm,0.26,0.01
+A14,ADHD200 头动上限 mm,results_v3/adhd200_description.csv,value,quantity=motion_max_mm,3.91,0.01
+A15,边界扫描最小有效秩,results_c0.05/boundary_sweep.csv,eff_rank,family=C_real_features;dataset=ABIDE1-HO-CPAC;feature=meanconn,2.23,0.01
+A16,边界扫描最小功效,results_c0.05/boundary_sweep.csv,power,family=C_real_features;dataset=ABIDE1-AAL116-NIAK;feature=gsr,0.770,0.002
+A17,多环境正对照 按站点 c=0.05 最佳功效,results_multienv/multienv_positive_control.csv,power_mean,env_mode=sites;c=0.05;r=2,0.100,0.005
+A18,多环境正对照 随机等分 c=0.05 r=1 功效,results_multienv/multienv_positive_control.csv,power_mean,env_mode=split;c=0.05;r=1,0.762,0.01
+A19,多环境正对照 随机等分 c=0.05 r=2 功效,results_multienv/multienv_positive_control.csv,power_mean,env_mode=split;c=0.05;r=2,0.736,0.01

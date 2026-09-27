@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# 运行产物（结果与图可从 results*/ 重建，不入库）
+paper/figs/*.png.bak
+*.log
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# LaTeX 中间文件（.tex 与 .pdf 入库，这些不入）
+*.aux
+*.out
+*.toc
+*.nav
+*.snm
+*.synctex.gz
